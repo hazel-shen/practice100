@@ -1,3 +1,8 @@
+/*
+Input a integer N, 
+and print out the N line of pascca triangle
+ */
+
 const readline = require('readline').createInterface({
   input: process.stdin, 
   output: process.stdout
