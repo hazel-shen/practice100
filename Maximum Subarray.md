@@ -13,7 +13,7 @@ class Solution {
       int curr = nums[0];
       
       for (int i=1;i<nums.length;i++) {
-          // 將現在的總和跟把下個元素加起來的總和比較，如果比較大的話就變成現在的總和
+          // 將現在的總和跟把下個元素加起來的總和比較，如果加起來比較大的話就變成現在的總和，如果不是的話從下個元素重新開始計算
         curr = Math.max(curr + nums[i], nums[i]);
           // 將現在的總和和上一次加起來最大的總和比較，誰比較大就是最大的總和
         max = Math.max(curr, max);
