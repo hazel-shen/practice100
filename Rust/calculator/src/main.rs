@@ -90,4 +90,3 @@ mod tests {
     operate('a', 1.0, 1.0);
   }
 }
-
