@@ -13,3 +13,10 @@ cargo build --bin calculator
 # build release version calculator
 cargo build --release --bin calculator
 ```
+
+## Upgrade Rust Version
+
+```shell
+rustup install stable
+rustup default stable
+```
