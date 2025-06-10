@@ -14,10 +14,10 @@ class Solution(object):
                 shortest_string = word
 
         same_char = []
-        flag = True
         last_index = 0
         result = ""
         for i in range(len(shortest_string)):        
+            flag = True
             for word in strs:
                 if word[i] != shortest_string[i]:
                     flag = False
