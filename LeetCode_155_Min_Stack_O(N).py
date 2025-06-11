@@ -60,7 +60,7 @@ class MinStack(object):
 
 minstack = MinStack()
 minstack.push(42)
-print(minstack.getMin())  # ➤ 預期 42
-print(minstack.top())     # ➤ 預期 42
+print(minstack.getMin())  
+print(minstack.top())  
 minstack.pop()
-# 接下來 top() 或 getMin() 都會壞掉（你要想一下怎麼處理）
+
