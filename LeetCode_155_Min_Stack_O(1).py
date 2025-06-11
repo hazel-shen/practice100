@@ -65,8 +65,8 @@ s = MinStack()
 s.push(5)
 s.push(3)
 s.push(4)
-print(s.getMin())  # 期待 3
+print(s.getMin())  # should be 3
 s.pop()
-print(s.getMin())  # 期待 3
+print(s.getMin())  # should be 3
 s.pop()
-print(s.getMin())  # 期待 5
+print(s.getMin())  # should be 5
