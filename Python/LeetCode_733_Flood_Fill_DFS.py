@@ -1,4 +1,3 @@
-from collections import deque
 class Solution(object):
     def floodFill(self, image, sr, sc, color):
         """
@@ -11,24 +10,24 @@ class Solution(object):
         oldColor = image[sr][sc]
         newColor = color
 
-        if oldColor == newColor: # if new color is same as old color, return image.
+        if oldColor == newColor:
             return image
 
         rows, cols = len(image), len(image[0])
-        directions = [(1,0), (-1,0), (0,1), (0, -1)] # Initialize the directions
+        directions = [(1,0), (-1,0), (0,1), (0, -1)]
         
-        queue = deque() # BFS way, use a deque to save node
-        queue.append((sr,sc))
+        stack = []
+        stack.append((sr,sc))
 
         image[sr][sc] = newColor
-        while(queue):
-            oldr, oldc =  queue.popleft()
-            for r, c in directions: # Loop the node with directions
+        while(stack):
+            oldr, oldc =  stack.pop()
+            for r, c in directions:
                 nr = oldr + r
                 nc = oldc + c
                 if rows > nr >= 0 and cols > nc >= 0 and image[nr][nc] == oldColor:
                     image[nr][nc] = newColor
-                    queue.append((nr, nc))
+                    stack.append((nr, nc))
         
         return image
         
