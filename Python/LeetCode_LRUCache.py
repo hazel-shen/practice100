@@ -29,7 +29,7 @@ class DoublyLinkedList:
         node.next.prev = node.prev
 
     def remove_last(self):
-        # remove the last node, O(1)
+        # remove the last node (which is not used recently), O(1)
         if self.tail.prev is self.head:
             return None
         last = self.tail.prev
@@ -74,13 +74,42 @@ class LRUCache(object):
             last = self.list.remove_last()
             del self.map[last.key]
 
-cache = LRUCache(2)
+    def delete(self, key):
+        # Delete specific key
+        if key in self.map:
+            old = self.map[key]
+            self.list.remove(old)
+            del self.map[key]
+
+    def peek(self, key):
+        # get the value depends on what key is
+        if key not in self.map:
+            return -1
+        return self.map[key].val
+    
+    # def resize(self, new_size):
+    #     # TODO:: when cale in the size, evict extra nodes.
+    #     self.cap = new_size
+
+    # def put_if_absent(self, key, value):
+    #     if key not in self.map:
+
+        
+
+
+cache = LRUCache(3)
 cache.put(1, 10)
 cache.list.debug_print()   # Check up on the list
 cache.put(2, 20)
 cache.list.debug_print()
-cache.get(1)
+# cache.get(1)
 cache.list.debug_print()
-cache.put(3, 10)
+cache.resize(4)
+cache.put(3, 30)
+cache.put(4, 40)
+cache.put(5, 50)
 cache.list.debug_print()
+cache.delete(3)
+cache.list.debug_print()
+print(cache.peek(1))
 
