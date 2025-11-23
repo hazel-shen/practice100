@@ -1,4 +1,5 @@
 # Manacher's Algorithm is the best solution.
+# Expand Around Center = O(n^2)
 class Solution(object):
 
     def longestPalindrome(self, s):
@@ -10,9 +11,9 @@ class Solution(object):
 
         result = ""
         for i in range(len(s)):
-            # odd
+            # odd string
             odd = expand(i, i)
-            # even
+            # even string
             even = expand(i, i+1)
             result = max(result, odd, even, key=len)
         
